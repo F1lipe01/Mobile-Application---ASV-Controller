@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }, delay);
 
-        // test bot 
+        // test bot 2
     }
 
     private boolean isNetworkAvailable() {
