@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 handler.postDelayed(this, delay);
             }
         }, delay);
+
+        // test bot 
     }
 
     private boolean isNetworkAvailable() {
