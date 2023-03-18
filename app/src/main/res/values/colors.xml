@@ -9,4 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="our_blue">#D6ECF6</color>
+    <color name="placeholder_colors">#C7C7C7</color>
+    <color name="error_message">#FF0000</color>
+    <color name="blue_background_button">#219EBC</color>
+
+
 </resources>
