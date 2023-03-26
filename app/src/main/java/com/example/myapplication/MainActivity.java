@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -109,11 +110,16 @@ public class MainActivity extends AppCompatActivity {
                 if(validateInput()){
                     errorMessage.setVisibility(TextView.GONE);
                     handleLoadingState();
+                    openActivity2();
                     // TODO - CHECK RASP RESPONSE
                 }
                 else errorMessage.setVisibility(TextView.VISIBLE);
             }
 
+            private void openActivity2(){
+                Intent intent =new Intent(getApplicationContext(), MainActivity2.class);
+                startActivity(intent);
+            }
             private boolean validateInput(){
                 String pin = inputPin.getText().toString();
                 if(pin.equals("1234")) return true;
