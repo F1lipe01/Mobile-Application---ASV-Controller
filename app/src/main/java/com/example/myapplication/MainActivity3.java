@@ -6,17 +6,28 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.Layout;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
+public class MainActivity3 extends AppCompatActivity {
 
-public class MainActivity2 extends AppCompatActivity {
+    private ImageButton free, task, back;
 
-    private ImageButton camera, remote, telemtry, setting;
-
-    private Button locate, stop;
 
     private boolean hasInternet;
 
@@ -24,14 +35,11 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main3);
 
-        camera = findViewById(R.id.cameraButton);
-        remote = findViewById(R.id.freeControl);
-        setting = findViewById(R.id.settingsButton);
-        telemtry = findViewById(R.id.telemetryButton);
-        stop = findViewById(R.id.stopButton);
-        locate = findViewById(R.id.locateButton);
+        free = findViewById(R.id.freeControl);
+        task = findViewById(R.id.taskControl);
+        back = findViewById(R.id.backButton);
 
 
         // Check if device has internet
@@ -53,87 +61,45 @@ public class MainActivity2 extends AppCompatActivity {
             }
         }, delay);
 
-
-        camera.setOnClickListener(new View.OnClickListener() {
+        free.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                openCameraMenu();
+                openFreeMenu();
                 // TODO - CHECK RASP RESPONSE
             }
 
-            private void openCameraMenu() {
+            private void openFreeMenu() {
                 //TODO Criar as activity
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
                 startActivity(intent);
             }
         });
 
-        remote.setOnClickListener(new View.OnClickListener() {
+        task.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                openRemoteMenu();
+                openTaskMenu();
                 // TODO - CHECK RASP RESPONSE
             }
 
-            private void openRemoteMenu() {
-                Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
-                startActivity(intent);
-            }
-        });
-
-        telemtry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                openTelemetryMenu();
-                // TODO - CHECK RASP RESPONSE
-            }
-
-            private void openTelemetryMenu() {
+            private void openTaskMenu() {
                 //TODO Criar as activity
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
                 startActivity(intent);
             }
         });
 
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSettingMenu();
-                // TODO - CHECK RASP RESPONSE
-            }
-
-            private void openSettingMenu() {
-                //TODO Criar as activity
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                startActivity(intent);
-            }
-        });
-        stop.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                openStopMenu();
+                openBackMenu();
                 // TODO - CHECK RASP RESPONSE
             }
 
-            private void openStopMenu() {
-                //TODO Criar as activity
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                startActivity(intent);
-            }
-        });
-        locate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                openLocateMenu();
-                // TODO - CHECK RASP RESPONSE
-            }
-
-            private void openLocateMenu() {
+            private void openBackMenu() {
                 //TODO Criar as activity
                 Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
                 startActivity(intent);

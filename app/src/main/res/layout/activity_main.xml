@@ -66,10 +66,10 @@
                 android:id="@+id/labelInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignStart="@id/inputPin"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/opensansbold"
                 android:text="Insert Pin"
-                android:layout_alignStart="@id/inputPin"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
