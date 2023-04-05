@@ -1,32 +1,22 @@
 package com.example.myapplication;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.Layout;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import pl.droidsonroids.gif.GifDrawable;
-import pl.droidsonroids.gif.GifImageView;
-public class MainActivity3 extends AppCompatActivity {
+public class MainActivity5 extends AppCompatActivity {
 
-    private ImageButton free, task, back;
+    private Button task1, task2, task3, task4;
+
+    private ImageButton back2;
 
 
     private boolean hasInternet;
@@ -35,11 +25,13 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_main5);
 
-        free = findViewById(R.id.freeControl);
-        task = findViewById(R.id.taskControl);
-        back = findViewById(R.id.backButton);
+        task1 = findViewById(R.id.task1);
+        task2 = findViewById(R.id.task2);
+        task3 = findViewById(R.id.task3);
+        task4 = findViewById(R.id.task4);
+        back2 = findViewById(R.id.backButton2);
 
 
         // Check if device has internet
@@ -61,51 +53,53 @@ public class MainActivity3 extends AppCompatActivity {
             }
         }, delay);
 
-        free.setOnClickListener(new View.OnClickListener() {
+        task1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO - Task1
+                // TODO - CHECK RASP RESPONSE
+            }
+        });
+        task2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO - Task1
+                // TODO - CHECK RASP RESPONSE
+            }
+        });
+        task3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO - Task1
+                // TODO - CHECK RASP RESPONSE
+            }
+        });
+        task4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO - Task1
+                // TODO - CHECK RASP RESPONSE
+            }
+        });
+
+        back2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                openFreeMenu();
+                openBackMenu2();
                 // TODO - CHECK RASP RESPONSE
             }
 
-            private void openFreeMenu() {
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+            private void openBackMenu2() {
+                Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
                 startActivity(intent);
             }
         });
 
-        task.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                openTaskMenu();
-                // TODO - CHECK RASP RESPONSE
-            }
+        }
 
-            private void openTaskMenu() {
-                Intent intent = new Intent(getApplicationContext(), MainActivity5.class);
-                startActivity(intent);
-            }
-        });
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                openBackMenu();
-                // TODO - CHECK RASP RESPONSE
-            }
-
-            private void openBackMenu() {
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-
-    private boolean isNetworkAvailable() {
+    private boolean isNetworkAvailable () {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null) {
             NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -115,7 +109,7 @@ public class MainActivity3 extends AppCompatActivity {
         return false;
     }
 
-    private void updateSignalImage(boolean animate) {
+    private void updateSignalImage ( boolean animate){
         if (hasInternet) {
             //TODO LAYOUT SEM NET
         } else {

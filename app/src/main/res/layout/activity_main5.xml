@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/our_blue"
+    tools:context=".MainActivity5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/backButton2"
+            android:layout_width="65dp"
+            android:layout_height="58dp"
+            android:backgroundTint="@color/our_blue"
+            android:contentDescription="back"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.002"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="296dp"
+            android:layout_height="40dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:fontFamily="serif"
+            android:layoutDirection="ltr"
+            android:text="CHALLENGES/TASKS"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.08" />
+
+        <TextView
+            android:id="@+id/errorMessage2"
+            android:layout_width="118dp"
+            android:layout_height="13dp"
+            android:layout_below="@id/textView9"
+            android:fontFamily="@font/opensansbold"
+            android:text="Somethin went wrong"
+            android:textColor="@color/error_message"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.904"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.72" />
+
+        <Button
+            android:id="@+id/task3"
+            android:layout_width="145dp"
+            android:layout_height="152dp"
+            android:backgroundTint="@color/blue_background_button"
+            android:text="TASK 3"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.139"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.621" />
+
+        <Button
+            android:id="@+id/task4"
+            android:layout_width="145dp"
+            android:layout_height="152dp"
+            android:backgroundTint="@color/blue_background_button"
+            android:text="TASK 4"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.623" />
+
+        <Button
+            android:id="@+id/task1"
+            android:layout_width="145dp"
+            android:layout_height="152dp"
+            android:backgroundTint="@color/blue_background_button"
+            android:text="TASK 1"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.139"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.305" />
+
+        <Button
+            android:id="@+id/task2"
+            android:layout_width="145dp"
+            android:layout_height="152dp"
+            android:backgroundTint="@color/blue_background_button"
+            android:text="TASK 2"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.304" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
