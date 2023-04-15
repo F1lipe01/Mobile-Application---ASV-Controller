@@ -22,12 +22,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 public class MainActivity3 extends AppCompatActivity {
 
     private ImageButton free, task, back;
 
+    private ConstraintLayout layout, layout2;
 
     private boolean hasInternet;
 
@@ -40,7 +43,8 @@ public class MainActivity3 extends AppCompatActivity {
         free = findViewById(R.id.freeControl);
         task = findViewById(R.id.taskControl);
         back = findViewById(R.id.backButton);
-
+        layout = findViewById(R.id.constraintLayout);
+        layout2 = findViewById(R.id.waiting_net_3);
 
         // Check if device has internet
         hasInternet = isNetworkAvailable();
@@ -56,6 +60,7 @@ public class MainActivity3 extends AppCompatActivity {
                 if (hasInternet != isConnected) {
                     hasInternet = isConnected;
                     updateSignalImage(true);
+
                 }
                 handler.postDelayed(this, delay);
             }
@@ -117,9 +122,11 @@ public class MainActivity3 extends AppCompatActivity {
 
     private void updateSignalImage(boolean animate) {
         if (hasInternet) {
-            //TODO LAYOUT SEM NET
+            layout.setVisibility(ConstraintLayout.VISIBLE);
+            layout2.setVisibility(ConstraintLayout.GONE);
         } else {
-
+            layout.setVisibility(ConstraintLayout.GONE);
+            layout2.setVisibility(ConstraintLayout.VISIBLE);
         }
     }
 }

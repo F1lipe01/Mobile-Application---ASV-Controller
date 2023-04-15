@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -19,6 +20,8 @@ public class MainActivity2 extends AppCompatActivity {
     private Button locate, stop;
 
     private boolean hasInternet;
+
+    private ConstraintLayout layout, layout2;
 
 
     @Override
@@ -32,7 +35,8 @@ public class MainActivity2 extends AppCompatActivity {
         telemtry = findViewById(R.id.telemetryButton);
         stop = findViewById(R.id.stopButton);
         locate = findViewById(R.id.locateButton);
-
+        layout = findViewById(R.id.constraintLayout_2);
+        layout2 = findViewById(R.id.waiting_net_2);
 
         // Check if device has internet
         hasInternet = isNetworkAvailable();
@@ -154,8 +158,11 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void updateSignalImage(boolean animate) {
         if (hasInternet) {
-            //TODO LAYOUT SEM NET
+            layout.setVisibility(ConstraintLayout.VISIBLE);
+            layout2.setVisibility(ConstraintLayout.GONE);
         } else {
+            layout.setVisibility(ConstraintLayout.GONE);
+            layout2.setVisibility(ConstraintLayout.VISIBLE);
 
         }
     }
