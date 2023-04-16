@@ -7,124 +7,136 @@
     android:background="@color/our_blue"
     tools:context=".MainActivity5">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout_2"
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.2"
-        android:visibility="gone">
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/defocus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="1">
 
 
-        <ImageButton
-            android:id="@+id/backButton2"
-            android:layout_width="65dp"
-            android:layout_height="58dp"
-            android:backgroundTint="@color/our_blue"
-            android:contentDescription="back"
-            android:textAlignment="viewStart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.002"
-            app:srcCompat="@drawable/back" />
+            <ImageButton
+                android:id="@+id/backButton2"
+                android:layout_width="65dp"
+                android:layout_height="58dp"
+                android:backgroundTint="@color/our_blue"
+                android:contentDescription="back"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.002"
+                app:srcCompat="@drawable/back" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="296dp"
-            android:layout_height="40dp"
-            android:layout_alignWithParentIfMissing="true"
-            android:fontFamily="serif"
-            android:layoutDirection="ltr"
-            android:text="CHALLENGES/TASKS"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.08" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="296dp"
+                android:layout_height="40dp"
+                android:layout_alignWithParentIfMissing="true"
+                android:fontFamily="serif"
+                android:layoutDirection="ltr"
+                android:text="CHALLENGES/TASKS"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.08" />
 
-        <TextView
-            android:id="@+id/errorMessage2"
-            android:layout_width="118dp"
-            android:layout_height="13dp"
-            android:layout_below="@id/textView9"
-            android:fontFamily="@font/opensansbold"
-            android:text="Something went wrong"
-            android:textColor="@color/error_message"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.904"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.72" />
+            <TextView
+                android:id="@+id/errorMessage2"
+                android:layout_width="118dp"
+                android:layout_height="13dp"
+                android:layout_below="@id/textView9"
+                android:fontFamily="@font/opensansbold"
+                android:text="Something went wrong"
+                android:textColor="@color/error_message"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.904"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.72" />
 
-        <Button
-            android:id="@+id/task3"
-            android:layout_width="145dp"
-            android:layout_height="152dp"
-            android:backgroundTint="@color/blue_background_button"
-            android:text="TASK 3"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.139"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.621" />
+            <Button
+                android:id="@+id/task3"
+                android:layout_width="145dp"
+                android:layout_height="152dp"
+                android:backgroundTint="@color/blue_background_button"
+                android:text="TASK 3"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.139"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.621" />
 
-        <Button
-            android:id="@+id/task4"
-            android:layout_width="145dp"
-            android:layout_height="152dp"
-            android:backgroundTint="@color/blue_background_button"
-            android:text="TASK 4"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.894"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.623" />
+            <Button
+                android:id="@+id/task4"
+                android:layout_width="145dp"
+                android:layout_height="152dp"
+                android:backgroundTint="@color/blue_background_button"
+                android:text="TASK 4"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.849"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.62" />
 
-        <Button
-            android:id="@+id/task1"
-            android:layout_width="145dp"
-            android:layout_height="152dp"
-            android:backgroundTint="@color/blue_background_button"
-            android:text="TASK 1"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.139"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.305" />
+            <Button
+                android:id="@+id/task1"
+                android:layout_width="145dp"
+                android:layout_height="152dp"
+                android:backgroundTint="@color/blue_background_button"
+                android:text="Test Message "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.139"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.305" />
 
-        <Button
-            android:id="@+id/task2"
-            android:layout_width="145dp"
-            android:layout_height="152dp"
-            android:backgroundTint="@color/blue_background_button"
-            android:text="TASK 2"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.894"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.304" />
+            <Button
+                android:id="@+id/task2"
+                android:layout_width="145dp"
+                android:layout_height="152dp"
+                android:backgroundTint="@color/blue_background_button"
+                android:text="TASK 2"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.849"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.303" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/waiting_net_2"
@@ -139,7 +151,7 @@
             android:fontFamily="serif"
             android:text="@string/no_internet_connection_en"
             android:textColor="@color/black"
-            android:textSize="23sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
@@ -149,7 +161,7 @@
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/no_signal_gif2"
-            android:layout_width="198dp"
+            android:layout_width="168dp"
             android:layout_height="183dp"
             android:src="@drawable/wifi_signal"
             android:visibility="visible"
@@ -165,29 +177,65 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/sending_rasp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:visibility="visible">
 
         <TextView
             android:id="@+id/rasp_text"
             android:layout_width="388dp"
             android:layout_height="53dp"
             android:layout_alignWithParentIfMissing="true"
-            android:fontFamily="@font/opensansextrabold"
+            android:fontFamily="@font/opensansregular"
             android:layoutDirection="ltr"
             android:text="Sending message to the vehicle"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.695"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.214" />
+            app:layout_constraintVertical_bias="0.295" />
+
+        <TextView
+            android:id="@+id/message_sucess_1"
+            android:layout_width="371dp"
+            android:layout_height="60dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:fontFamily="@font/opensansregular"
+            android:layoutDirection="ltr"
+            android:text="@string/sucess_message"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.548" />
+
+        <TextView
+            android:id="@+id/message_sucess_2"
+            android:layout_width="371dp"
+            android:layout_height="60dp"
+            android:layout_alignWithParentIfMissing="true"
+            android:fontFamily="@font/opensansregular"
+            android:layoutDirection="ltr"
+            android:text="@string/rasp_available"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.618" />
 
         <pl.droidsonroids.gif.GifImageView
             android:id="@+id/no_signal_gif3"
-            android:layout_width="242dp"
-            android:layout_height="239dp"
+            android:layout_width="219dp"
+            android:layout_height="212dp"
             android:src="@drawable/send"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -201,12 +249,13 @@
             android:id="@+id/connected"
             android:layout_width="70dp"
             android:layout_height="60dp"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.524"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.299"
+            app:layout_constraintVertical_bias="0.41"
             app:srcCompat="@drawable/connected" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

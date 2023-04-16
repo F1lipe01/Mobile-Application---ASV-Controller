@@ -6,5 +6,7 @@
     <string name="button_confirm_en">Confirm</string>
     <string name="invalid_pin_en">Invalid Pin</string>
     <string name="note_en">Please, make sure the vehicle is online and also connected to the network</string>
+    <string name="sucess_message">Message Sent Sucessfully</string>
+    <string name="rasp_available">Raspberry Pi Available for Connectivity</string>
 
 </resources>
