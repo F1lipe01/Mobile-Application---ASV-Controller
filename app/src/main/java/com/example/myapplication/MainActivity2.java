@@ -97,7 +97,7 @@ public class MainActivity2 extends AppCompatActivity {
 
             private void openTelemetryMenu() {
                 //TODO Criar as activity
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity6.class);
                 startActivity(intent);
             }
         });

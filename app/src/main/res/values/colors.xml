@@ -12,6 +12,9 @@
     <color name="placeholder_colors">#C7C7C7</color>
     <color name="error_message">#FF0000</color>
     <color name="blue_background_button">#219EBC</color>
+    <color name="telemetry_idle_color">#219EBC</color>
+    <color name="telemetry_maneuvering_color">#00B050</color>
+    <color name="telemetry_error_color">#AFABAB</color>
 
 
 </resources>
