@@ -41,6 +41,10 @@ public class MainActivity5 extends AppCompatActivity {
 
     private static final String TAG = "MainActivity5";
 
+    private String task1Message = "Task1";
+    private String task2Message = "Task2";
+    private String task3Message = "Task3";
+    private String task4Message = "Task4";
     private Button task1, task2, task3, task4;
 
     private ImageButton back2;
@@ -49,7 +53,7 @@ public class MainActivity5 extends AppCompatActivity {
 
     private TextView errorMessage, rasp_text, rasp_available, rasp_sucess;
 
-    private GifImageView noSignalGifImageView,sendingMessage;
+    private GifImageView noSignalGifImageView, sendingMessage;
 
     private ConstraintLayout layout, layout2, sending;
     private boolean hasInternet;
@@ -57,6 +61,8 @@ public class MainActivity5 extends AppCompatActivity {
     FrameLayout frameLayout;
     ImageView blurredImageView;
 
+    private static final String raspberryPiIpAddress = "192.168.1.66"; // Replace with Raspberry Pi's IP address
+    private static final int raspberryPiPort = 49162; // Replace with the port of the Raspberry Pi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,15 +123,15 @@ public class MainActivity5 extends AppCompatActivity {
             public void onClick(View v) {
                 updateImage2(true);
 
-                String raspberryPiIpAddress = "192.168.1.66"; // Replace with Raspberry Pi's IP address
-                int raspberryPiPort = 10000; // Replace with the port of the Raspberry Pi
-
                 // Execute the SocketTask
-                new SocketTask(raspberryPiIpAddress, raspberryPiPort).execute();
-                // In the future , add a new argument for the type of message
+                if (taskSuccess()) {
+                    new SocketTask(raspberryPiIpAddress, raspberryPiPort, task1Message).execute();
+                } else {
+                    errorMessage.setVisibility(TextView.VISIBLE);
+                }
             }
 
-            private boolean taskSuccess(){
+            private boolean taskSuccess() {
                 //TODO - Task sent confirmation
                 return true;
             }
@@ -134,16 +140,16 @@ public class MainActivity5 extends AppCompatActivity {
         task2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(taskSuccess()) {
-                    //TODO - Task1
-                    // TODO - CHECK RASP RESPONSE
-                }
-                else{
+                updateImage2(true);
+
+                if (taskSuccess()) {
+                    new SocketTask(raspberryPiIpAddress, raspberryPiPort, task2Message).execute();
+                } else {
                     errorMessage.setVisibility(TextView.VISIBLE);
                 }
             }
 
-            private boolean taskSuccess(){
+            private boolean taskSuccess() {
                 //TODO - Task sent confirmation
                 return true;
             }
@@ -152,34 +158,34 @@ public class MainActivity5 extends AppCompatActivity {
         task3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(taskSuccess()) {
-                    //TODO - Task1
-                    // TODO - CHECK RASP RESPONSE
-                }
-                else{
+                updateImage2(true);
+
+                if (taskSuccess()) {
+                    new SocketTask(raspberryPiIpAddress, raspberryPiPort, task3Message).execute();
+                } else {
                     errorMessage.setVisibility(TextView.VISIBLE);
                 }
             }
 
-            private boolean taskSuccess(){
+            private boolean taskSuccess() {
                 //TODO - Task sent confirmation
-                return false;
+                return true;
             }
         });
 
         task4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(taskSuccess()) {
-                    //TODO - Task1
-                    // TODO - CHECK RASP RESPONSE
-                }
-                else{
+                updateImage2(true);
+
+                if (taskSuccess()) {
+                    new SocketTask(raspberryPiIpAddress, raspberryPiPort, task4Message).execute();
+                } else {
                     errorMessage.setVisibility(TextView.VISIBLE);
                 }
             }
 
-            private boolean taskSuccess(){
+            private boolean taskSuccess() {
                 //TODO - Task sent confirmation
                 return true;
             }
@@ -206,11 +212,13 @@ public class MainActivity5 extends AppCompatActivity {
     class SocketTask extends AsyncTask<Void, Void, String> {
         private String ipAddress;
         private int port;
+        private String message;
         private static final int SOCKET_TIMEOUT = 5000; // 5 seconds
 
-        public SocketTask(String ipAddress, int port) {
+        public SocketTask(String ipAddress, int port, String message) {
             this.ipAddress = ipAddress;
             this.port = port;
+            this.message = message;
         }
 
         protected String doInBackground(Void... voids) {
@@ -228,12 +236,12 @@ public class MainActivity5 extends AppCompatActivity {
 
                 outputStream = socket.getOutputStream();
                 writer = new PrintWriter(outputStream, true);
-                writer.println("Ping");
+                writer.println(message);
 
-                Log.d(TAG, "doInBackground: Message Sent to Raspberry Pi " + "Ping" );
+                Log.d(TAG, "doInBackground: Message Sent to Raspberry Pi " + message);
 
                 reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                char[] buffer = new char[16];
+                char[] buffer = new char[256];
                 int bytesRead = reader.read(buffer, 0, buffer.length);
                 if (bytesRead > 0) {
                     String response = new String(buffer, 0, bytesRead);
@@ -244,30 +252,10 @@ public class MainActivity5 extends AppCompatActivity {
 
                 return null;
             } catch (IOException e) {
-
-                if (reader != null) {
-                    try {
-                        reader.close();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                }
-                if (writer != null) {
-                    writer.close();
-                }
-                if (socket != null) {
-                    try {
-                        socket.close();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                }
-
                 e.printStackTrace();
                 Log.d(TAG, "doInBackground: IOException while connecting to Raspberry Pi", e);
-
-                return null;
-            }  finally {
+                return "Error";
+            } finally {
                 if (reader != null) {
                     try {
                         reader.close();
@@ -295,18 +283,21 @@ public class MainActivity5 extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if ("Pong".equals(result)) {
-                        Log.d(TAG, "onPostExecute: Pong Message Received " + result);
+                    String expectedResponse = message.equals("Ping") ? "Pong" : "ACK " + message;
+                    if (expectedResponse.equals(result)) {
+                        Log.d(TAG, "onPostExecute: Expected Message Received " + result);
 
-                        Toast.makeText(MainActivity5.this, "Message Received: " + result, Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity5.this, "Expected Message Received: " + result, Toast.LENGTH_LONG).show();
                         updateImage3();
                     } else {
                         String toastMessage;
                         updateImage2(false);
                         if (result == null) {
                             toastMessage = "No message received. \n Please, try again later.";
+                        } else if (result.equals("Error")) {
+                            toastMessage = "An error occurred while connecting. \n Please, try again later.";
                         } else {
-                            toastMessage = "Message received: " + result;
+                            toastMessage = "Unexpected message received: " + result;
                         }
 
                         Toast.makeText(MainActivity5.this, toastMessage, Toast.LENGTH_LONG).show();
@@ -317,7 +308,7 @@ public class MainActivity5 extends AppCompatActivity {
     }
 
 
-    private boolean isNetworkAvailable () {
+    private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null) {
 
@@ -347,6 +338,7 @@ public class MainActivity5 extends AppCompatActivity {
         }
         Log.d(TAG, "updateSignalImage: Internet availability: " + hasInternet);
     }
+
     private void updateImage2(boolean exp) {
         if (exp) {
             // PUT LAYOUT BLUR
@@ -387,7 +379,7 @@ public class MainActivity5 extends AppCompatActivity {
 
     }
 
-    private void updateImage3(){
+    private void updateImage3() {
         sendingMessage.setVisibility(ConstraintLayout.GONE);
         connect.setVisibility(ConstraintLayout.VISIBLE);
         rasp_text.setVisibility(ConstraintLayout.GONE);
@@ -428,4 +420,3 @@ public class MainActivity5 extends AppCompatActivity {
         }
     }
 }
-
