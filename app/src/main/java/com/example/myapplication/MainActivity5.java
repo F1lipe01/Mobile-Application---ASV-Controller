@@ -6,14 +6,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -45,7 +42,12 @@ public class MainActivity5 extends AppCompatActivity {
     private String task2Message = "Task2";
     private String task3Message = "Task3";
     private String task4Message = "Task4";
-    private Button task1, task2, task3, task4;
+
+    private String task5Message = "Task5";
+
+    private String pingMessage = "Ping";
+
+    private Button ping, task1, task2, task3, task4,task5;
 
     private ImageButton back2;
 
@@ -64,20 +66,23 @@ public class MainActivity5 extends AppCompatActivity {
     private static final String raspberryPiIpAddress = "192.168.1.66"; // Replace with Raspberry Pi's IP address
     private static final int raspberryPiPort = 49162; // Replace with the port of the Raspberry Pi
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
 
+        ping = findViewById(R.id.ping);
         task1 = findViewById(R.id.task1);
         task2 = findViewById(R.id.task2);
         task3 = findViewById(R.id.task3);
         task4 = findViewById(R.id.task4);
+        task5 = findViewById(R.id.task5);
+
         back2 = findViewById(R.id.backButton2);
         errorMessage = findViewById(R.id.errorMessage2);
         rasp_text = findViewById(R.id.rasp_text);
         rasp_available = findViewById(R.id.message_sucess_2);
         rasp_sucess = findViewById(R.id.message_sucess_1);
+
 
         frameLayout = findViewById(R.id.frameLayout);
         blurredImageView = findViewById(R.id.defocus);
@@ -117,11 +122,32 @@ public class MainActivity5 extends AppCompatActivity {
         }, delay);
 
 
+        ping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateImage2(true);
+                rasp_text.setText("Testing Connectivity with ASV");
+
+                // Execute the SocketTask
+                if (taskSuccess()) {
+                    new SocketTask(raspberryPiIpAddress, raspberryPiPort, pingMessage).execute();
+                } else {
+                    errorMessage.setVisibility(TextView.VISIBLE);
+                }
+            }
+
+            private boolean taskSuccess() {
+                //TODO - Task sent confirmation
+                return true;
+            }
+        });
 
         task1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 updateImage2(true);
+                rasp_text.setText("Sending Task 1 Command");
+                rasp_available.setText("Task 1 executed successfully");
 
                 // Execute the SocketTask
                 if (taskSuccess()) {
@@ -141,6 +167,8 @@ public class MainActivity5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateImage2(true);
+                rasp_text.setText("Sending Task 2 Command");
+                rasp_available.setText("Task 2 executed successfully");
 
                 if (taskSuccess()) {
                     new SocketTask(raspberryPiIpAddress, raspberryPiPort, task2Message).execute();
@@ -159,6 +187,8 @@ public class MainActivity5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateImage2(true);
+                rasp_text.setText("Sending Task 3 Command");
+                rasp_available.setText("Task 3 executed successfully");
 
                 if (taskSuccess()) {
                     new SocketTask(raspberryPiIpAddress, raspberryPiPort, task3Message).execute();
@@ -177,9 +207,31 @@ public class MainActivity5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 updateImage2(true);
+                rasp_text.setText("Sending Task 4 Command");
+                rasp_available.setText("Task 4 executed successfully");
 
                 if (taskSuccess()) {
                     new SocketTask(raspberryPiIpAddress, raspberryPiPort, task4Message).execute();
+                } else {
+                    errorMessage.setVisibility(TextView.VISIBLE);
+                }
+            }
+
+            private boolean taskSuccess() {
+                //TODO - Task sent confirmation
+                return true;
+            }
+        });
+
+        task5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateImage2(true);
+                rasp_text.setText("Sending Task 5 Command");
+                rasp_available.setText("Task 5 executed successfully");
+
+                if (taskSuccess()) {
+                    new SocketTask(raspberryPiIpAddress, raspberryPiPort, task5Message).execute();
                 } else {
                     errorMessage.setVisibility(TextView.VISIBLE);
                 }
@@ -330,6 +382,8 @@ public class MainActivity5 extends AppCompatActivity {
             task2.setEnabled(true);
             task3.setEnabled(true);
             task4.setEnabled(true);
+            ping.setEnabled(true);
+            task5.setEnabled(true);
             back2.setEnabled(true);
         } else {
             layout.setVisibility(ConstraintLayout.GONE);
@@ -361,6 +415,8 @@ public class MainActivity5 extends AppCompatActivity {
             task2.setEnabled(false);
             task3.setEnabled(false);
             task4.setEnabled(false);
+            task5.setEnabled(false);
+            ping.setEnabled(false);
             back2.setEnabled(false);
         } else {
             blurredImageView.setVisibility(View.GONE);
@@ -373,6 +429,8 @@ public class MainActivity5 extends AppCompatActivity {
             task2.setEnabled(true);
             task3.setEnabled(true);
             task4.setEnabled(true);
+            task5.setEnabled(true);
+            ping.setEnabled(true);
             back2.setEnabled(true);
         }
         Log.d(TAG, "updateImage2: UI state change: " + exp);
@@ -393,7 +451,7 @@ public class MainActivity5 extends AppCompatActivity {
             public void run() {
                 updateImage2(false);
             }
-        }, 2000); // 2 seconds delay
+        }, 4000); // 4 seconds delay
     }
 
     public class BlurBuilder {
