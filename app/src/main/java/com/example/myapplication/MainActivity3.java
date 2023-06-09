@@ -69,9 +69,7 @@ public class MainActivity3 extends AppCompatActivity {
         free.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openFreeMenu();
-                // TODO - CHECK RASP RESPONSE
             }
 
             private void openFreeMenu() {
@@ -83,9 +81,7 @@ public class MainActivity3 extends AppCompatActivity {
         task.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openTaskMenu();
-                // TODO - CHECK RASP RESPONSE
             }
 
             private void openTaskMenu() {
@@ -97,9 +93,7 @@ public class MainActivity3 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openBackMenu();
-                // TODO - CHECK RASP RESPONSE
             }
 
             private void openBackMenu() {

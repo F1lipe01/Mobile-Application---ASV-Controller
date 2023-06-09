@@ -63,7 +63,7 @@ public class MainActivity5 extends AppCompatActivity {
     FrameLayout frameLayout;
     ImageView blurredImageView;
 
-    private static final String raspberryPiIpAddress = "192.168.1.66"; // Replace with Raspberry Pi's IP address
+    private static final String raspberryPiIpAddress = "192.168.92.32"; // Replace with Raspberry Pi's IP address
     private static final int raspberryPiPort = 49162; // Replace with the port of the Raspberry Pi
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +127,7 @@ public class MainActivity5 extends AppCompatActivity {
             public void onClick(View v) {
                 updateImage2(true);
                 rasp_text.setText("Testing Connectivity with ASV");
+                rasp_available.setText("Task 1 executed successfully");
 
                 // Execute the SocketTask
                 if (taskSuccess()) {
@@ -344,12 +345,14 @@ public class MainActivity5 extends AppCompatActivity {
                     } else {
                         String toastMessage;
                         updateImage2(false);
+
                         if (result == null) {
-                            toastMessage = "No message received. \n Please, try again later.";
+                            toastMessage = "No message received. Please, try again later.";
                         } else if (result.equals("Error")) {
-                            toastMessage = "An error occurred while connecting. \n Please, try again later.";
+                            toastMessage = "An error occurred while connecting. Please, try again later.";
                         } else {
-                            toastMessage = "Unexpected message received: " + result;
+                            toastMessage = result;
+                            Log.d(TAG, result);
                         }
 
                         Toast.makeText(MainActivity5.this, toastMessage, Toast.LENGTH_LONG).show();
@@ -445,6 +448,7 @@ public class MainActivity5 extends AppCompatActivity {
         rasp_sucess.setVisibility(ConstraintLayout.VISIBLE);
 
         Log.d(TAG, "updateImage3: Message sent successfully");
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
