@@ -73,7 +73,7 @@ public class MainActivity3 extends AppCompatActivity {
             }
 
             private void openFreeMenu() {
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity7.class);
                 startActivity(intent);
             }
         });
