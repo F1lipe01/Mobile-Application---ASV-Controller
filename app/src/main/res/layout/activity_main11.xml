@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/our_blue"
+    tools:context=".MainActivity11">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout_2"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:alpha="1">
+
+
+    <ImageView
+        android:id="@+id/shape2"
+        android:layout_width="393dp"
+        android:layout_height="448dp"
+        android:background="@drawable/telemetry_page"
+        android:backgroundTint="@color/blue_background_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355"
+        app:srcCompat="@drawable/telemetry_page" />
+
+    <ImageButton
+        android:id="@+id/backButton2"
+        android:layout_width="65dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/our_blue"
+        android:contentDescription="back"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.002"
+        app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="296dp"
+        android:layout_height="40dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="Team Members"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="357dp"
+        android:layout_height="385dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:lineSpacingExtra="10sp"
+        android:text="António Maia | up201907767@edu.fe.up.pt  Beatriz Silva   | up201907843@edu.fe.up.pt  Bernardo Gabriel | up201906064@fe.up.pt  Filipe Peixoto | up201906174@up.pt  Henrique Pinguicha | up201806452@fe.up.pt  João Ventura | up201806618@edu.fe.up.pt  José Pedro | up201806375@edu.fe.up.pt  José Sousa | up201905822@edu.fe.up.pt  Margarida Moreira | up201905262@fe.up.pt  Miguel Silva | up201904672@fe.up.pt  Nuno Nascimento | up201907933@fe.up.pt  Patrícia Vieira | up201709468@edu.fc.up.pt  Samuel Loureiro | up201904598@up.pt"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/our_blue"
+    tools:context=".MainActivity9">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/constraintLayout_2"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:alpha="1">
+
+
+    <ImageView
+        android:id="@+id/shape2"
+        android:layout_width="366dp"
+        android:layout_height="581dp"
+        android:background="@drawable/telemetry_page"
+        android:backgroundTint="@color/blue_background_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59"
+        app:srcCompat="@drawable/telemetry_page" />
+
+    <ImageButton
+        android:id="@+id/backButton2"
+        android:layout_width="65dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/our_blue"
+        android:contentDescription="back"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.002"
+        app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="296dp"
+        android:layout_height="40dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="Missions"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="347dp"
+        android:layout_height="61dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="Complete a course without any obstacles"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.221" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="356dp"
+        android:layout_height="31dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="  Mission 1"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.176" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="349dp"
+        android:layout_height="64dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="Complete a course with obstacles in known positions"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="356dp"
+        android:layout_height="31dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="  Mission 2"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="349dp"
+        android:layout_height="64dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="Complete an obstacle course in unknown positions and with an known number of buoys"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.435"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.591" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="356dp"
+        android:layout_height="31dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="  Mission 3"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.522" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="356dp"
+        android:layout_height="31dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="  Mission 4"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="342dp"
+        android:layout_height="64dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:fontFamily="serif"
+        android:layoutDirection="ltr"
+        android:text="Complete an obstacle course in unknown positions and with an unknown number of buoys"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.829" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

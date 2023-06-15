@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name_en">Yellow Submarine</string>
+    <string name="app_name_en">Equipa L</string>
     <string name="no_internet_connection_en">Waiting for internet connection</string>
     <string name="has_internet_connection_en">Connected</string>
     <string name="pin_placeholder_en">Select Pin</string>

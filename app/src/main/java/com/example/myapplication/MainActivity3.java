@@ -6,26 +6,11 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.Layout;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
-import pl.droidsonroids.gif.GifDrawable;
-import pl.droidsonroids.gif.GifImageView;
 public class MainActivity3 extends AppCompatActivity {
 
     private ImageButton free, task, back;
@@ -73,8 +58,8 @@ public class MainActivity3 extends AppCompatActivity {
             }
 
             private void openFreeMenu() {
-                Intent intent = new Intent(getApplicationContext(), MainActivity7.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
+                //startActivity(intent);
             }
         });
 

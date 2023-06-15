@@ -1,8 +1,5 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -23,6 +20,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -63,7 +63,7 @@ public class MainActivity5 extends AppCompatActivity {
     FrameLayout frameLayout;
     ImageView blurredImageView;
 
-    private static final String raspberryPiIpAddress = "192.168.92.32"; // Replace with Raspberry Pi's IP address
+    private static final String raspberryPiIpAddress = "192.168.57.32"; // Replace with Raspberry Pi's IP address
     private static final int raspberryPiPort = 49162; // Replace with the port of the Raspberry Pi
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +75,6 @@ public class MainActivity5 extends AppCompatActivity {
         task2 = findViewById(R.id.task2);
         task3 = findViewById(R.id.task3);
         task4 = findViewById(R.id.task4);
-        task5 = findViewById(R.id.task5);
 
         back2 = findViewById(R.id.backButton2);
         errorMessage = findViewById(R.id.errorMessage2);
@@ -88,11 +87,11 @@ public class MainActivity5 extends AppCompatActivity {
         blurredImageView = findViewById(R.id.defocus);
 
         noSignalGifImageView = findViewById(R.id.no_signal_gif2);
-        sendingMessage = findViewById(R.id.no_signal_gif3);
+        sendingMessage = findViewById(R.id.searching);
         layout = findViewById(R.id.constraintLayout_2);
         layout2 = findViewById(R.id.waiting_net_2);
         sending = findViewById(R.id.sending_rasp);
-        connect = findViewById(R.id.connected);
+        connect = findViewById(R.id.not_connected);
         errorMessage.setVisibility(TextView.GONE);
         layout2.setVisibility(ConstraintLayout.GONE);
 
@@ -224,25 +223,6 @@ public class MainActivity5 extends AppCompatActivity {
             }
         });
 
-        task5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateImage2(true);
-                rasp_text.setText("Sending Task 5 Command");
-                rasp_available.setText("Task 5 executed successfully");
-
-                if (taskSuccess()) {
-                    new SocketTask(raspberryPiIpAddress, raspberryPiPort, task5Message).execute();
-                } else {
-                    errorMessage.setVisibility(TextView.VISIBLE);
-                }
-            }
-
-            private boolean taskSuccess() {
-                //TODO - Task sent confirmation
-                return true;
-            }
-        });
 
         back2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -349,7 +329,7 @@ public class MainActivity5 extends AppCompatActivity {
                         if (result == null) {
                             toastMessage = "No message received. Please, try again later.";
                         } else if (result.equals("Error")) {
-                            toastMessage = "An error occurred while connecting. Please, try again later.";
+                            toastMessage = "ASV is Offline";
                         } else {
                             toastMessage = result;
                             Log.d(TAG, result);
@@ -386,7 +366,6 @@ public class MainActivity5 extends AppCompatActivity {
             task3.setEnabled(true);
             task4.setEnabled(true);
             ping.setEnabled(true);
-            task5.setEnabled(true);
             back2.setEnabled(true);
         } else {
             layout.setVisibility(ConstraintLayout.GONE);
@@ -418,7 +397,6 @@ public class MainActivity5 extends AppCompatActivity {
             task2.setEnabled(false);
             task3.setEnabled(false);
             task4.setEnabled(false);
-            task5.setEnabled(false);
             ping.setEnabled(false);
             back2.setEnabled(false);
         } else {
@@ -432,7 +410,6 @@ public class MainActivity5 extends AppCompatActivity {
             task2.setEnabled(true);
             task3.setEnabled(true);
             task4.setEnabled(true);
-            task5.setEnabled(true);
             ping.setEnabled(true);
             back2.setEnabled(true);
         }

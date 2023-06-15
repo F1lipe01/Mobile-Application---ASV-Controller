@@ -305,13 +305,17 @@ public class MainActivity6 extends AppCompatActivity {
                         String toastMessage;
                         if (result == null) {
                             toastMessage = "No message received. Couldn't Update";
+                            Toast.makeText(MainActivity6.this, toastMessage, Toast.LENGTH_LONG).show();
+
                         } else if (result.equals("Error")) {
                             toastMessage = "An error occurred while connecting. Couldn't Update";
                         } else {
                             toastMessage = result;
                             Log.d(TAG, result);
+                            Toast.makeText(MainActivity6.this, toastMessage, Toast.LENGTH_LONG).show();
+
                         }
-                        Toast.makeText(MainActivity6.this, toastMessage, Toast.LENGTH_LONG).show();
+
                     }
                 }
             });

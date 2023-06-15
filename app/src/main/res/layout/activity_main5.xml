@@ -27,20 +27,6 @@
 
 
             <Button
-                android:id="@+id/task5"
-                android:layout_width="313dp"
-                android:layout_height="65dp"
-                android:backgroundTint="@color/blue_background_button"
-                android:text="TASK 5"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.925" />
-
-            <Button
                 android:id="@+id/task1"
                 android:layout_width="313dp"
                 android:layout_height="65dp"
@@ -53,7 +39,7 @@
                 app:layout_constraintHorizontal_bias="0.489"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.328" />
+                app:layout_constraintVertical_bias="0.332" />
 
             <Button
                 android:id="@+id/task2"
@@ -66,8 +52,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.472" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/task3"
@@ -81,7 +66,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.622" />
+                app:layout_constraintVertical_bias="0.665" />
 
             <Button
                 android:id="@+id/task4"
@@ -93,9 +78,10 @@
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.489"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.773" />
+                app:layout_constraintVertical_bias="0.842" />
 
             <ImageButton
                 android:id="@+id/backButton2"
@@ -259,7 +245,7 @@
             app:layout_constraintVertical_bias="0.618" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/no_signal_gif3"
+            android:id="@+id/searching"
             android:layout_width="219dp"
             android:layout_height="212dp"
             android:src="@drawable/send"
@@ -272,7 +258,7 @@
             app:layout_constraintVertical_bias="0.552" />
 
         <ImageView
-            android:id="@+id/connected"
+            android:id="@+id/not_connected"
             android:layout_width="70dp"
             android:layout_height="60dp"
             android:visibility="visible"
